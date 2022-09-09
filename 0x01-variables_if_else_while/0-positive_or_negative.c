@@ -8,7 +8,7 @@
  * * Description: using the main function
  * * this program prints "Programming is positive, zero, or negative
  * * Return: 0
- */
+ * */
 int main(void)
 {
 	int n;
@@ -17,6 +17,8 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	  /* your code goes there */
 	if (n > 0)
+	{
+		printf("%i is positive\n", n);
 	{
 			printf("%i is positive\n", n);
 	}
@@ -30,3 +32,4 @@ int main(void)
 	}
 	return (0);
 }
+
