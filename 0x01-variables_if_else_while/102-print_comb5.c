@@ -1,35 +1,31 @@
 #include <stdio.h>
-
 /**
- * main - Entry point
- *
- * Description: return all combination of 0 to 99
- * Return: 0
- */
+*main - Prints all combinations of two two digits with,
+* and space followed by new line
+*
+*Return: returns 0
+*/
 int main(void)
 {
-  int n, m, d1, d2, d3, d4;
+	int digit1, digit2;
 
-  for (n = 0; n <= 98; n++)
-    {
-      for (m = n + 1; m <= 99; m++)
+	for (digit1 = 0; digit1 <= 98; digit1++)
 	{
-	  d1 = n / 10;
-	  d2 = n % 10;
-	  putchar(d1 + '0');
-	  putchar(d2 + '0');
-	  putchar(' ');
-	  d3 = m / 10;
-	  d4 = m % 10;
-	  putchar(d3 + '0');
-	  putchar(d4 + '0');
-	  if (n != 98 || m != 99)
-	    {
-	      putchar(',');
-	      putchar(' ');
-	    }
+		for (digit2 = digit1 + 1; digit2 <= 99; digit2++)
+		{
+			putchar((digit1 / 10) + '0');
+			putchar((digit1 % 10) + '0');
+			putchar(32);
+			putchar((digit2 / 10) + '0');
+			putchar((digit2 % 10) + '0');
+
+			if (digit1 / 10 != 9 || digit1 % 10 != 8)
+			{
+				putchar(44);
+				putchar(32);
+			}
+		}
 	}
-    }
-  putchar('\n');
-  return (0);
+	putchar(10);
+	return (0);
 }
