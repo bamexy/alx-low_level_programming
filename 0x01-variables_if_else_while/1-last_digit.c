@@ -1,63 +1,33 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
+
 /**
-<<<<<<< HEAD
- *main - Prints the last digit of random number
- *
- *Return: Return 0
+ * main - Entry point
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-  int n;
-  int last;
-
-  srand(time(0));
-  n = rand() - RAND_MAX / 2;
-  last = n % 10;
-
-  if (last == 0)
-    {
-      printf("Last digit of %d is %d and is 0\n", n, last);
-    }
-  else
-    {
-      if (last > 5)
-	{
-	  printf("Last digit of %d is %d and is greater than 5\n", n, last);
-	}
-      else if (last < 6)
-	{
-	  printf("Last digit of %d is %d and is less than 6 and not 0\n", n, last);
-=======
-*main - Prints the last digit of random number
-*
-*Return: Return 0
-*/
-int main(void)
-{
-	int n;
-	int last;
+	int n, i;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	last = n % 10;
-
-	if (last == 0)
+	i = n % 10;
+	printf("Last digit of %d is ", n);
+	if (i  > 5)
 	{
-		printf("Last digit of %d is %d and is 0\n", n, last);
+		printf("%d and is greater than 5\n", i);
 	}
 	else
 	{
-		if (last > 5)
+		if (i < 6 && i != 0)
 		{
-			printf("Last digit of %d is %d and is greater than 5\n", n, last);
+			printf("%d and is less than 6 and not 0\n", i);
 		}
-		else if (last < 6)
+		else
 		{
-			printf("Last digit of %d is %d and is less than 6 and not 0\n", n, last);
+			printf("%d and is 0\n", i);
 		}
->>>>>>> 375f6f542d8017af19e98a33a90b2bbf6e60170d
 	}
 	return (0);
 }
