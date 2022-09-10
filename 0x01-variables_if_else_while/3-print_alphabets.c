@@ -1,20 +1,28 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-
+#include <ctype.h>
 /**
- * main - Entry point
- * Return: Always 0 (Success)
- */
+*main - Program to print alphabet letters in all cases followed by new line
+*
+*Return: return 0
+*/
 int main(void)
 {
-  char letters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  int i;
+	int letter;
 
-  for (i = 0; i <= 51; i++)
-    {
-      putchar(letters[i]);
-    }
-  putchar('\n');
-  return (0);
+	for (letter = 'a'; letter <= 'z'; letter++)
+	{
+		letter = tolower(letter);
+		putchar(letter);
+		if (letter == 'z')
+		{
+			letter = 'A';
+			for (; letter <= 'Z'; letter++)
+			{
+				putchar(letter);
+			}
+			break;
+		}
+	}
+	putchar('\n');
+	return (0);
 }

@@ -1,20 +1,22 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-
+#include <ctype.h>
 /**
- * main - Entry point
- * Return: Always 0 (Success)
- */
+*main - Program to print alphabet letters except q and e followed by new line
+*
+*Return: return 0
+*/
 int main(void)
 {
-  char string[] = "abcdfghijklmnoprstuvwxyz";
-  int i;
+	int letter;
 
-  for (i = 0; i < 24; i++)
-    {
-      putchar(string[i]);
-    }
-  putchar('\n');
-  return (0);
+	for (letter = 'a'; letter <= 'z'; letter++)
+	{
+		if (letter == 'q' || letter == 'e')
+		{
+			continue;
+		}
+		putchar(letter);
+	}
+	putchar('\n');
+	return (0);
 }
