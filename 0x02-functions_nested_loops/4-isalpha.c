@@ -1,16 +1,15 @@
 #include "main.h"
 
 /**
- * _islower - found the lowercase characters.
+ * _isalpha - Entry point
  *
  * @c: c is the variable for the program.
- *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
-int _islower(int c)
+int _isalpha(int c)
 {
 
-	if (c >= 'a' && c <= 'z')
+	if (('z' > c && c > 'a') || ('Z' > c && c > 'A'))
 	{
 		return (1);
 	}
