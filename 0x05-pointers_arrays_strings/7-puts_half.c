@@ -1,21 +1,20 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * puts2 - function should print only one character out of two
- * starting with the first one
- * @str: input
- * Return: print
- */
-void puts2(char *str)
-{
-	int i = 0;
+* puts_half - print second half of a string
+* @str: char array string type
+* Description: If odd number of chars, print (length - 1) / 2
+*/
 
-	for (; str[i] != '\0'; i++)
+void puts_half(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+		i++;
+	for (i /= 2; str[i] != '\0'; i++)
 	{
-		if ((i % 2) == 0)
-			_putchar(str[i]);
-		else
-			continue;
+		_putchar(str[i]);
 	}
 	_putchar('\n');
 }
