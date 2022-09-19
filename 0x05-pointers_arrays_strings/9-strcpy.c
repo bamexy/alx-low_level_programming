@@ -1,18 +1,24 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * char *_strcpy - a function that copies the string pointed to by src
- * @dest: copy to
- * @src: copy from
- * Return: string
- */
-char *_strcpy(char *dest, char *src)
-{
-	int i = 0;
+* print_array - prints n element of array
+* @a: array
+* @n: number of elements
+* Return: nothing
+*/
 
-	for (; src[i] != '\0'; i++)
+void print_array(int *a, int n)
+{
+	int inc;
+
+	for (inc = 0; inc < n ; inc++)
 	{
-		dest[i] = src[i];
+		if (inc != n - 1)
+			printf("%d, ", a[inc]);
+		else
+			printf("%d", a[inc]);
+
 	}
-	return (dest);
+	putchar(10);
 }
