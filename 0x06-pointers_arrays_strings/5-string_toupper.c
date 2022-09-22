@@ -1,30 +1,34 @@
+#include <stdlib.h>
 #include "main.h"
 /**
- * cap_string - capitalizes all words of a string
- * @s: input string.
- * Return: the pointer to dest.
- */
+* _strstr - locates a substring
+*
+* @haystack: the longer string to search
+* @needle: the substring to search for
+*
+* Return: a pointer to the beginning of the located substring, or NULL if
+* the substring is not found.
+*/
 
-char *cap_string(char *s)
+char *_strstr(char *haystack, char *needle)
 {
-	int count = 0, i;
-	int sep_words[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+	int i;
+	int s = 0;
 
-	if (*(s + count) >= 97 && *(s + count) <= 122)
-		*(s + count) = *(s + count) - 32;
-	count++;
-	while (*(s + count) != '\0')
+	while (needle[s] != '\0')
+		s++;
+
+	while (*haystack)
 	{
-		for (i = 0; i < 13; i++)
+		for (i = 0; needle[i]; i++)
 		{
-			if (*(s + count) == sep_words[i])
-			{
-				if ((*(s + (count + 1)) >= 97) && (*(s + (count + 1)) <= 122))
-					*(s + (count + 1)) = *(s + (count + 1)) - 32;
+			if (haystack[i] != needle[i])
 				break;
-			}
 		}
-		count++;
+		if (i != s)
+			haystack++;
+		else
+			return (haystack);
 	}
-	return (s);
+	return (NULL);
 }
